@@ -4,16 +4,15 @@ import ToolsDrawer from './ToolsDrawer';
 
 const Editor = (props) => (
     <ToolsDrawer
-        isShowEditorValue
         renderEditor={({
             onChange
         }) => (
             <EditorCore
                 appearance="comment"
                 onChange={onChange}
-                {...props}
             />
         )}
+        {...props}
     />
 );
 

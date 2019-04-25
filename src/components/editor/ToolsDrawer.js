@@ -10,6 +10,7 @@ class ToolsDrawer extends React.Component {
 
     this.transformer = new JSONTransformer();
     this.state = {
+      isShowEditorValue: false,
       jsonDocument: '{}'
     }
   }
@@ -25,14 +26,32 @@ class ToolsDrawer extends React.Component {
   }
 
   render() {
-    const { renderEditor, isShowEditorValue } = this.props;
+    const { renderEditor } = this.props;
+    const { isShowEditorValue } = this.state;
 
     return (
       <EditorContext>
         <>
+          <button
+            onClick={() => {
+              this.setState({isShowEditorValue: !isShowEditorValue});
+            }}
+          >
+            Show/Hide JSON Data
+          </button>
           <WithEditorActions
             render={actions => (
               <>
+                <button
+                  onClick={async () => {
+                    const {getValue} = this.props;
+                    const value = await actions.getValue();
+
+                    getValue(value);
+                  }}
+                >
+                  Save
+                </button>
               </>
             )}
           />
