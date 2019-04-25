@@ -1,18 +1,8 @@
 import * as React from 'react';
-import styled from 'styled-components';
 import { Editor } from '@atlaskit/editor-core';
 import { JSONTransformer } from '@atlaskit/editor-json-transformer';
-
-const jsonPretty = (obj: any) => JSON.stringify(obj, null, 2);
-
-const PreWrapDiv = styled.div`
-  white-space: pre-wrap;
-
-  &:empty:not(:focus)::before {
-    content: attr(data-placeholder);
-    font-size: 14px;
-  }
-`;
+import PreWrapDiv from './styledComponents/PreWrapDiv';
+import { jsonPretty } from '../utils/string';
 
 class App extends React.Component {
   state = {

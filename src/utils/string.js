@@ -1,0 +1,1 @@
+export const jsonPretty = (obj) => JSON.stringify(obj, null, 2);
