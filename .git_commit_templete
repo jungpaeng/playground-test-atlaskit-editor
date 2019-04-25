@@ -1,0 +1,38 @@
+# 커밋 템플릿
+{이모지} 커밋 제목
+
+- 코드의 변화에 대한
+- 중점적 내용 서술
+
+예)
+:sparkles: 새로운 기능 추가
+
+- ViewSet 의 추상화를 통한 재사용성
+- ViewSet 상속하여 새로운 기능 추가
+
+# 커밋에 이모지를 사용하여 커밋의 성격을 다른 개발자가 한 눈에 알 수 있도록 도와줍니다.
+
+# ✨ `:sparkles:`         새 기능
+# 🎨 `:art:`              코드 리팩터링
+# ⚡️ `:zap:`              기능 개선 및 변경
+# 👌 `:ok_hand:`          코드 리뷰 반영사항
+# 🔨 `:hammer:`           구조 개선(앱, 디렉터리, 코드 배치)
+# 🐛 `:bug:`              버그 픽스
+# 🚑 `:ambulance:`        크리티컬한 핫픽스
+# 🚧 `:construction:`     진행 중인 사항에 대한 중간 커밋(WIP)
+# 📝 `:pencil:`           오탈자 또는 문구, 변수명 수정
+# 📇  `:card_index:`      메타 데이터(타입, 인터페이스 정의)
+# 💄 `:lipstick:`         UI 작업
+# 🐎 `:racehorse:`        성능 개선
+# 🔧 `:wrench:`           tooling & scripting(CI, Webpack)
+# ⬆️  `:arrow_up:`        dependencies 업그레이드
+# ⬇️  `:arrow_down:`      dependencies 다운그레이드
+# 📚  `:books:`           문서화
+# 💩 `:poop:`             코드 또는 파일 삭제
+# 🔬 `:microscope:`       시험적 기능
+# ✅ `:white_check_mark:` 테스트 추가
+# 📷 `:camera:`           스냅샷 업데이트
+# ➕ `:heavy_plus_sign:`  패키지 추가
+# ➖ `:heavy_minus_sign:` 패키지 삭제
+# 🐳 `:whale:`            도커(Docker)
+# 👕 `:shirt:`            code 변경 없이 linter warning 삭제
