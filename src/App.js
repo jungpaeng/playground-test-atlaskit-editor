@@ -1,8 +1,11 @@
 import React from 'react';
+import { Editor } from '@atlaskit/editor-core';
 
 const App = () => (
-  <div className="App">
-    Test Page
+  <div>
+    <Editor
+      appearance="comment"
+    />
   </div>
 );
 
