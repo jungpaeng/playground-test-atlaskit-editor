@@ -1,3 +1,5 @@
+import * as React from 'react';
+import TestIcon from '../../styledComponents/TestIcon';
 import { youtubeReg, vimeoReg } from '../../../constants/urls';
 
 const mockInsertMenu = [
@@ -6,8 +8,8 @@ const mockInsertMenu = [
     value: { name: 'movie' },
     tooltipDescription: 'Movie extension',
     tooltipPosition: 'right',
-    elemBefore: (null),
-    onClick: function(editorActions: EditorActions) {
+    elemBefore: <TestIcon />,
+    onClick: editorActions => {
       const url = prompt('Input Url');
       const youtubeMatch = url.match(youtubeReg);
       const vimeoMatch = url.match(vimeoReg);

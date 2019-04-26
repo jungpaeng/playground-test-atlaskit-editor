@@ -26,8 +26,8 @@ const extensionHandlers = {
           <div>
             <iframe
               title={`movie-${movie.id}`}
-              width="854"
-              height="480"
+              width="560"
+              height="315"
               src={movie.src + movie.id}
               frameborder="0"
             />
