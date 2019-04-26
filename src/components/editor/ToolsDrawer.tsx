@@ -5,10 +5,10 @@ import PreWrapDiv from '../styledComponents/PreWrapDiv';
 import { jsonPretty } from '../../utils/string'
 import { EditorView } from 'prosemirror-view';
 import { Indexable } from '../../types/common';
+import { EditorProps } from './Editor';
 
-interface Props {
+interface Props extends EditorProps {
   renderEditor: (params: Indexable) => React.ReactNode;
-  getValue: (value: string) => void;
 }
 
 interface State {
