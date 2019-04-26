@@ -3,6 +3,7 @@ import CustomSVG from '../../common/CustomSVG';
 import { youtubeReg, vimeoReg } from '../../../constants/urls';
 import { testIcon } from '../../../constants/svg';
 import { InsertMenuCustomItem } from '@atlaskit/editor-core/types';
+import { createEditorMenuItem } from '../../../utils/editor';
 
 interface Params {
   type: string;
@@ -10,14 +11,8 @@ interface Params {
 }
 
 const mockInsertMenu: InsertMenuCustomItem[] = [
-  {
+  createEditorMenuItem({
     content: 'Movie extension',
-    value: { name: 'movie' },
-    tooltipDescription: 'Movie extension',
-    tooltipPosition: 'right',
-    elemBefore: (
-      <CustomSVG width="24" height="24" d={testIcon} />
-    ),
     onClick: editorActions => {
       const url = prompt('Input Url') || '';
       const youtubeMatch = url.match(youtubeReg);
@@ -43,8 +38,8 @@ const mockInsertMenu: InsertMenuCustomItem[] = [
           parameters: newParameters
         }
       });
-    },
-  },
+    }
+  })
 ]
 
 export default mockInsertMenu;
