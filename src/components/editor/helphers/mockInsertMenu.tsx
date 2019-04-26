@@ -2,8 +2,14 @@ import * as React from 'react';
 import CustomSVG from '../../common/CustomSVG';
 import { youtubeReg, vimeoReg } from '../../../constants/urls';
 import { testIcon } from '../../../constants/svg';
+import { InsertMenuCustomItem } from '@atlaskit/editor-core/types';
 
-const mockInsertMenu = [
+interface Params {
+  type: string;
+  url: any;
+}
+
+const mockInsertMenu: InsertMenuCustomItem[] = [
   {
     content: 'Movie extension',
     value: { name: 'movie' },
@@ -12,11 +18,11 @@ const mockInsertMenu = [
     elemBefore: (
       <CustomSVG width="24" height="24" d={testIcon} />
     ),
-    onClick: (editorActions: any) => {
+    onClick: editorActions => {
       const url = prompt('Input Url') || '';
       const youtubeMatch = url.match(youtubeReg);
       const vimeoMatch = url.match(vimeoReg);
-      const newParameters: any = {};
+      const newParameters: Params = {} as Params;
 
       if (youtubeMatch && youtubeMatch[2].length === 11) {
         newParameters.type = 'youtube';

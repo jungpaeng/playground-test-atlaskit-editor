@@ -1,7 +1,13 @@
 import * as React from 'react';
+import { ExtensionHandlers } from '@atlaskit/editor-common';
 
-const extensionHandlers = {
-  'com.haniplanet.macro.core': (ext: any, doc: any) => {
+interface Movie {
+  id: string;
+  src: string;
+}
+
+const extensionHandlers: ExtensionHandlers = {
+  'com.haniplanet.macro.core': (ext, doc) => {
     const {
       extensionKey,
       parameters
@@ -10,7 +16,7 @@ const extensionHandlers = {
     switch (extensionKey) {
       case 'movie':
         const {type, url} = parameters;
-        const movie: any = {};
+        const movie: Movie = {} as Movie;
 
         if (type === 'youtube') {
           movie.id = url[2];

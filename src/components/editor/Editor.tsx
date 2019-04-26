@@ -5,7 +5,7 @@ import mockInsertMenu from './helphers/mockInsertMenu';
 import extensionHandlers from './helphers/extensionHandlers';
 
 type Props = {
-  getValue: (value: any) => void;
+  getValue: (value: string) => void;
 };
 
 const Editor = (props: Props) => (

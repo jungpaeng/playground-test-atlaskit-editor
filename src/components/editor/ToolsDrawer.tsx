@@ -2,15 +2,22 @@ import * as React from 'react';
 import { EditorContext, WithEditorActions } from '@atlaskit/editor-core';
 import { JSONTransformer } from '@atlaskit/editor-json-transformer';
 import PreWrapDiv from '../styledComponents/PreWrapDiv';
-import { jsonPretty } from '../../utils/string';
+import { jsonPretty } from '../../utils/string'
+import { EditorView } from 'prosemirror-view';
+import { Indexable } from '../../types/common';
 
 interface Props {
-  renderEditor: (params: any) => React.ReactNode;
-  getValue: any;
+  renderEditor: (params: Indexable) => React.ReactNode;
+  getValue: (value: string) => void;
 }
 
-class ToolsDrawer extends React.Component<Props, any> {
-  transformer: any;
+interface State {
+  isShowEditorValue: boolean;
+  jsonDocument: string;
+}
+
+class ToolsDrawer extends React.Component<Props, State> {
+  transformer: JSONTransformer;
 
   constructor(props: Props) {
     super(props);
@@ -22,7 +29,7 @@ class ToolsDrawer extends React.Component<Props, any> {
     }
   }
 
-  onChange = (editorView: any) => {
+  onChange = (editorView: EditorView<any>): void => {
     const jsonDocument = jsonPretty(
       this.transformer.encode(editorView.state.doc)
     );
