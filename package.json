@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@atlaskit/editor-core": "^107.24.0",
+    "@atlaskit/editor-core": "^107.24.3",
     "@atlaskit/editor-json-transformer": "^5.0.2",
     "@atlaskit/media-core": "^29.1.5",
     "@atlaskit/renderer": "^45.6.2",

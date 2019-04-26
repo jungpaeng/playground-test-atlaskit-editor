@@ -200,7 +200,7 @@
     keycode "^2.1.7"
     prop-types "^15.5.10"
 
-"@atlaskit/editor-common@^36.0.0", "@atlaskit/editor-common@^36.1.2", "@atlaskit/editor-common@^36.2.1", "@atlaskit/editor-common@^36.2.2":
+"@atlaskit/editor-common@^36.0.0", "@atlaskit/editor-common@^36.2.2":
   version "36.2.2"
   resolved "https://registry.yarnpkg.com/@atlaskit/editor-common/-/editor-common-36.2.2.tgz#558b69ae3ad4becebd6d800458a599059393a6ed"
   integrity sha512-lOegiOz8/Zsm8bxFiA6y2W/ErQV9oDIoyPrVRn8p/sutxQgF/ke5G6DYPW4hxTYqSnCkgkBxdioXaURCkdlUgg==
@@ -223,10 +223,33 @@
     prosemirror-view "^1.8.3"
     raf-schd "^2.1.0"
 
-"@atlaskit/editor-core@^107.24.0":
-  version "107.24.0"
-  resolved "https://registry.yarnpkg.com/@atlaskit/editor-core/-/editor-core-107.24.0.tgz#81c1f013fec7f19039eca51c1917ddfebe2a1db4"
-  integrity sha512-ym7IT/H/K/pR2xBNNTYk1SWgmZ7dEl5HlchMu9pNf1ZaA+XmXX7RsHFJwItMPna4gqgMkbTyM4OnIraEmcj0ZA==
+"@atlaskit/editor-common@^36.1.2", "@atlaskit/editor-common@^36.2.3":
+  version "36.2.3"
+  resolved "https://registry.yarnpkg.com/@atlaskit/editor-common/-/editor-common-36.2.3.tgz#84bf3ae8bff2888f1fd34a8a3d678011c5b1851c"
+  integrity sha512-ZjjJ0TyN69SwEdsUHHSljNcAoZX1XnvyQ7vR/WO+fW8cCtiA3T73qQ49tnbzKs6uyVGdlqdzAVnkPUPU0ND7sQ==
+  dependencies:
+    "@atlaskit/adf-schema" "^2.5.1"
+    "@atlaskit/emoji" "^59.2.3"
+    "@atlaskit/icon" "^16.0.9"
+    "@atlaskit/media-card" "^60.0.3"
+    "@atlaskit/mention" "^17.6.7"
+    "@atlaskit/profilecard" "^9.0.4"
+    "@atlaskit/theme" "^8.1.7"
+    "@atlaskit/width-detector" "^1.0.0"
+    "@types/prosemirror-model" "^1.5.0"
+    "@types/prosemirror-state" "^1.2.0"
+    "@types/prosemirror-view" "^1.3.0"
+    classnames "^2.2.5"
+    css-color-names "0.0.4"
+    date-fns "^1.30.1"
+    prosemirror-model "^1.7.0"
+    prosemirror-view "^1.8.3"
+    raf-schd "^2.1.0"
+
+"@atlaskit/editor-core@^107.24.3":
+  version "107.24.3"
+  resolved "https://registry.yarnpkg.com/@atlaskit/editor-core/-/editor-core-107.24.3.tgz#4de07f24b0841dbf54f3af2750cc8b241e176587"
+  integrity sha512-kk5zOagIjw8f8QzKrlT8AGQhlsHmpzSTKKm7yizQ9feHUcHmUuXu+J0hJfs0HWKacT+zdXDZHQNu7VOsOkIlCQ==
   dependencies:
     "@atlaskit/activity" "^1.0.1"
     "@atlaskit/adf-schema" "^2.5.4"
@@ -242,7 +265,7 @@
     "@atlaskit/code" "^9.0.1"
     "@atlaskit/date" "^0.6.4"
     "@atlaskit/droplist" "^8.0.5"
-    "@atlaskit/editor-common" "^36.2.1"
+    "@atlaskit/editor-common" "^36.2.3"
     "@atlaskit/editor-json-transformer" "^5.0.2"
     "@atlaskit/editor-markdown-transformer" "^3.0.3"
     "@atlaskit/emoji" "^59.2.4"
@@ -259,7 +282,7 @@
     "@atlaskit/smart-card" "^10.4.2"
     "@atlaskit/spinner" "^10.0.7"
     "@atlaskit/status" "^0.8.3"
-    "@atlaskit/task-decision" "^14.0.6"
+    "@atlaskit/task-decision" "^14.0.7"
     "@atlaskit/theme" "^8.1.7"
     "@atlaskit/tooltip" "^13.0.5"
     "@atlaskit/util-service-support" "^4.0.2"
@@ -822,10 +845,30 @@
     "@atlaskit/theme" "^8.1.7"
     styled-components "^3.2.6"
 
-"@atlaskit/task-decision@^14.0.5", "@atlaskit/task-decision@^14.0.6":
+"@atlaskit/task-decision@^14.0.5":
   version "14.0.6"
   resolved "https://registry.yarnpkg.com/@atlaskit/task-decision/-/task-decision-14.0.6.tgz#a884f24484e46847c01ec1afd174736551a88878"
   integrity sha512-1nH1bwHIEfrxdpyAw16Sj0hz1idzbTTtkqkpU+ZFd5ExK76lthdkrzQfxhu9lvT1q0dcNv+9Q2lCocRW+RxoPg==
+  dependencies:
+    "@atlaskit/analytics-namespaced-context" "^3.0.3"
+    "@atlaskit/analytics-next" "^4.0.5"
+    "@atlaskit/avatar-group" "^3.0.4"
+    "@atlaskit/button" "^12.0.4"
+    "@atlaskit/icon" "^16.0.9"
+    "@atlaskit/spinner" "^10.0.7"
+    "@atlaskit/theme" "^8.1.7"
+    "@atlaskit/util-service-support" "^4.0.2"
+    "@types/react-loadable" "^5.4.1"
+    date-fns "^1.30.1"
+    lodash.debounce "^4.0.8"
+    react-loadable "^5.1.0"
+    tslib "^1.9.3"
+    uuid "^3.1.0"
+
+"@atlaskit/task-decision@^14.0.7":
+  version "14.0.7"
+  resolved "https://registry.yarnpkg.com/@atlaskit/task-decision/-/task-decision-14.0.7.tgz#59399dbc79ce24c28e24ca7df0af3705eed885f2"
+  integrity sha512-3uCf53pZE/gcqeRqF7Fzxi3qurc6nEuhklsTofWTcwlXZ5mZ9PXZq8i2YFadHpivbZNIbzsONEyNagilNvws8Q==
   dependencies:
     "@atlaskit/analytics-namespaced-context" "^3.0.3"
     "@atlaskit/analytics-next" "^4.0.5"
