@@ -12,11 +12,11 @@ const mockInsertMenu = [
     elemBefore: (
       <CustomSVG width="24" height="24" d={testIcon} />
     ),
-    onClick: editorActions => {
+    onClick: (editorActions: any) => {
       const url = prompt('Input Url') || '';
       const youtubeMatch = url.match(youtubeReg);
       const vimeoMatch = url.match(vimeoReg);
-      const newParameters = {};
+      const newParameters: any = {};
 
       if (youtubeMatch && youtubeMatch[2].length === 11) {
         newParameters.type = 'youtube';

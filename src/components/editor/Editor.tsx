@@ -4,7 +4,11 @@ import ToolsDrawer from './ToolsDrawer';
 import mockInsertMenu from './helphers/mockInsertMenu';
 import extensionHandlers from './helphers/extensionHandlers';
 
-const Editor = (props) => (
+type Props = {
+  getValue: (value: any) => void;
+};
+
+const Editor = (props: Props) => (
   <ToolsDrawer
     renderEditor={({
       onChange

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 const extensionHandlers = {
-  'com.haniplanet.macro.core': (ext, doc) => {
+  'com.haniplanet.macro.core': (ext: any, doc: any) => {
     const {
       extensionKey,
       parameters
@@ -10,7 +10,7 @@ const extensionHandlers = {
     switch (extensionKey) {
       case 'movie':
         const {type, url} = parameters;
-        const movie = {};
+        const movie: any = {};
 
         if (type === 'youtube') {
           movie.id = url[2];
@@ -29,7 +29,6 @@ const extensionHandlers = {
               width="560"
               height="315"
               src={movie.src + movie.id}
-              frameborder="0"
             />
           </div>
         );

@@ -2,8 +2,14 @@ import * as React from 'react';
 import { ReactRenderer } from '@atlaskit/renderer';
 import Editor from './editor/Editor';
 
-class App extends React.Component {
-  constructor(props) {
+type Props = { };
+
+interface State {
+  editorValue: string;
+}
+
+class App extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
 
     this.state = {

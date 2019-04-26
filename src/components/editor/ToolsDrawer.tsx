@@ -4,8 +4,15 @@ import { JSONTransformer } from '@atlaskit/editor-json-transformer';
 import PreWrapDiv from '../styledComponents/PreWrapDiv';
 import { jsonPretty } from '../../utils/string';
 
-class ToolsDrawer extends React.Component {
-  constructor(props) {
+interface Props {
+  renderEditor: (params: any) => React.ReactNode;
+  getValue: any;
+}
+
+class ToolsDrawer extends React.Component<Props, any> {
+  transformer: any;
+
+  constructor(props: Props) {
     super(props);
 
     this.transformer = new JSONTransformer();
@@ -15,7 +22,7 @@ class ToolsDrawer extends React.Component {
     }
   }
 
-  onChange = (editorView) => {
+  onChange = (editorView: any) => {
     const jsonDocument = jsonPretty(
       this.transformer.encode(editorView.state.doc)
     );
