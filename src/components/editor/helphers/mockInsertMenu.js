@@ -13,7 +13,7 @@ const mockInsertMenu = [
       <CustomSVG width="24" height="24" d={testIcon} />
     ),
     onClick: editorActions => {
-      const url = prompt('Input Url');
+      const url = prompt('Input Url') || '';
       const youtubeMatch = url.match(youtubeReg);
       const vimeoMatch = url.match(vimeoReg);
       const newParameters = {};

@@ -15,7 +15,7 @@ const CustomSVG = ({
     <path
       d={d}
       fill="currentColor"
-      fill-rule="evenodd"
+      fillRule="evenodd"
     />
   </svg>
 );
