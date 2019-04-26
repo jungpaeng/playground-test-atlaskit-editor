@@ -1,7 +1,4 @@
-import * as React from 'react';
-import CustomSVG from '../../common/CustomSVG';
 import { youtubeReg, vimeoReg } from '../../../constants/urls';
-import { testIcon } from '../../../constants/svg';
 import { InsertMenuCustomItem } from '@atlaskit/editor-core/types';
 import { createEditorMenuItem } from '../../../utils/editor';
 
