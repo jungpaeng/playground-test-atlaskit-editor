@@ -8,7 +8,7 @@ const mockInsertMenu = [
     tooltipPosition: 'right',
     elemBefore: (null),
     onClick: function(editorActions: EditorActions) {
-      const input = prompt('Input Url');
+      const url = prompt('Input Url');
 
       editorActions.replaceSelection({
         type: 'extension',
@@ -16,7 +16,7 @@ const mockInsertMenu = [
           extensionType: 'com.haniplanet.macro.core',
           extensionKey: 'movie',
           text: 'Movie extension',
-          parameters: { input }
+          parameters: { url }
         }
       });
     },
