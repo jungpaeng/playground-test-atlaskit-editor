@@ -25,6 +25,7 @@ class App extends React.Component<Props, State> {
         />
         <ReactRenderer
           document={this.state.editorValue}
+          extensionHandlers={extensionHandlers}
         />
       </>
     );
