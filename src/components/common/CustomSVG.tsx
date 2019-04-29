@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 interface Props {
   width: string;
@@ -6,11 +6,7 @@ interface Props {
   d: string;
 }
 
-const CustomSVG = ({
-  width,
-  height,
-  d
-}: Props) => (
+const CustomSVG = ({ width, height, d }: Props) => (
   <svg
     width={width}
     height={height}
@@ -18,11 +14,7 @@ const CustomSVG = ({
     focusable="false"
     role="presentation"
   >
-    <path
-      d={d}
-      fill="currentColor"
-      fillRule="evenodd"
-    />
+    <path d={d} fill="currentColor" fillRule="evenodd" />
   </svg>
 );
 

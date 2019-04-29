@@ -1,8 +1,9 @@
-import * as React from 'react';
-import { ReactRenderer } from '@atlaskit/renderer';
-import Editor from './editor/Editor';
+import * as React from "react";
+import { ReactRenderer } from "@atlaskit/renderer";
+import Editor from "./editor/Editor";
+import extensionHandlers from "./editor/helphers/extensionHandlers";
 
-type Props = { };
+type Props = {};
 
 interface State {
   editorValue: string;
@@ -13,16 +14,14 @@ class App extends React.Component<Props, State> {
     super(props);
 
     this.state = {
-      editorValue: ''
-    }
+      editorValue: ""
+    };
   }
 
   render() {
     return (
       <>
-        <Editor
-          getValue={editorValue => this.setState({editorValue})}
-        />
+        <Editor getValue={editorValue => this.setState({ editorValue })} />
         <ReactRenderer
           document={this.state.editorValue}
           extensionHandlers={extensionHandlers}

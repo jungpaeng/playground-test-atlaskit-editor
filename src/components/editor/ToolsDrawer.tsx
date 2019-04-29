@@ -1,11 +1,11 @@
-import * as React from 'react';
-import { EditorContext, WithEditorActions } from '@atlaskit/editor-core';
-import { JSONTransformer } from '@atlaskit/editor-json-transformer';
-import PreWrapDiv from '../styledComponents/PreWrapDiv';
-import { jsonPretty } from '../../utils/string'
-import { EditorView } from 'prosemirror-view';
-import { Indexable } from '../../types/common';
-import { EditorProps } from './Editor';
+import * as React from "react";
+import { EditorContext, WithEditorActions } from "@atlaskit/editor-core";
+import { JSONTransformer } from "@atlaskit/editor-json-transformer";
+import PreWrapDiv from "../styledComponents/PreWrapDiv";
+import { jsonPretty } from "../../utils/string";
+import { EditorView } from "prosemirror-view";
+import { Indexable } from "../../types/common";
+import { EditorProps } from "./Editor";
 
 interface Props extends EditorProps {
   renderEditor: (params: Indexable) => React.ReactNode;
@@ -25,8 +25,8 @@ class ToolsDrawer extends React.Component<Props, State> {
     this.transformer = new JSONTransformer();
     this.state = {
       isShowEditorValue: false,
-      jsonDocument: '{}'
-    }
+      jsonDocument: "{}"
+    };
   }
 
   onChange = (editorView: EditorView<any>): void => {
@@ -37,7 +37,7 @@ class ToolsDrawer extends React.Component<Props, State> {
     this.setState({
       jsonDocument
     });
-  }
+  };
 
   render() {
     const { renderEditor } = this.props;
@@ -48,7 +48,7 @@ class ToolsDrawer extends React.Component<Props, State> {
         <>
           <button
             onClick={() => {
-              this.setState({isShowEditorValue: !isShowEditorValue});
+              this.setState({ isShowEditorValue: !isShowEditorValue });
             }}
           >
             Show/Hide JSON Data
@@ -58,7 +58,7 @@ class ToolsDrawer extends React.Component<Props, State> {
               <>
                 <button
                   onClick={async () => {
-                    const {getValue} = this.props;
+                    const { getValue } = this.props;
                     const value = await actions.getValue();
 
                     getValue(value);
@@ -73,9 +73,7 @@ class ToolsDrawer extends React.Component<Props, State> {
             onChange: this.onChange
           })}
           {isShowEditorValue && (
-            <PreWrapDiv>
-              {this.state.jsonDocument}
-            </PreWrapDiv>
+            <PreWrapDiv>{this.state.jsonDocument}</PreWrapDiv>
           )}
         </>
       </EditorContext>

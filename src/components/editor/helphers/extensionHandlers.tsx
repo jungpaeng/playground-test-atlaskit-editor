@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { ExtensionHandlers } from '@atlaskit/editor-common';
+import * as React from "react";
+import { ExtensionHandlers } from "@atlaskit/editor-common";
 
 interface Movie {
   id: string;
@@ -7,23 +7,20 @@ interface Movie {
 }
 
 const extensionHandlers: ExtensionHandlers = {
-  'com.haniplanet.macro.core': (ext, doc) => {
-    const {
-      extensionKey,
-      parameters
-    } = ext;
+  "com.haniplanet.macro.core": (ext, doc) => {
+    const { extensionKey, parameters } = ext;
 
     switch (extensionKey) {
-      case 'movie':
-        const {type, url} = parameters;
+      case "movie":
+        const { type, url } = parameters;
         const movie: Movie = {} as Movie;
 
-        if (type === 'youtube') {
+        if (type === "youtube") {
           movie.id = url[2];
-          movie.src = '//www.youtube.com/embed/';
-        } else if (type === 'vimeo') {
+          movie.src = "//www.youtube.com/embed/";
+        } else if (type === "vimeo") {
           movie.id = url[1];
-          movie.src = '//player.vimeo.com/video/';
+          movie.src = "//player.vimeo.com/video/";
         } else {
           return null;
         }
@@ -39,9 +36,9 @@ const extensionHandlers: ExtensionHandlers = {
           </div>
         );
       default:
-          return null;
+        return null;
     }
   }
-}
+};
 
 export default extensionHandlers;
