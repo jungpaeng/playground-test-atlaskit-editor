@@ -48,7 +48,9 @@ class ToolsDrawer extends React.Component<Props, State> {
         <>
           <button
             onClick={() => {
-              this.setState({ isShowEditorValue: !isShowEditorValue });
+              this.setState({
+                isShowEditorValue: !isShowEditorValue
+              });
             }}
           >
             Show/Hide JSON Data
