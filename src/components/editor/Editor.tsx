@@ -10,11 +10,11 @@ export interface EditorProps {
 
 const Editor = (props: EditorProps) => (
   <ToolsDrawer
-    renderEditor={({ onChange }) => (
+    renderEditor={({ onChange, fileUploadMenuItem }) => (
       <EditorCore
         appearance="comment"
         extensionHandlers={extensionHandlers}
-        insertMenuItems={selectMockMenu(["movie"])}
+        insertMenuItems={[...selectMockMenu(["movie"]), fileUploadMenuItem]}
         onChange={onChange}
         allowExtension
       />

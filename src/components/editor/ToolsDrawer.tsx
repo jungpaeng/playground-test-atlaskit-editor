@@ -1,11 +1,12 @@
 import * as React from "react";
 import { EditorContext, WithEditorActions } from "@atlaskit/editor-core";
 import { JSONTransformer } from "@atlaskit/editor-json-transformer";
+import { InsertMenuCustomItem } from "@atlaskit/editor-core/types";
 import PreWrapDiv from "../styledComponents/PreWrapDiv";
 import { jsonPretty } from "../../utils/string";
 import { EditorView } from "prosemirror-view";
-import { Indexable } from "../../types/common";
 import { EditorProps } from "./Editor";
+import { createEditorMenuItem } from "../../utils/editor";
 
 interface RenderEditor {
   onChange: (editorView: EditorView<any>) => void;
@@ -33,16 +34,6 @@ class ToolsDrawer extends React.Component<Props, State> {
       jsonDocument: "{}"
     };
   }
-
-  onChange = (editorView: EditorView<any>): void => {
-    const jsonDocument = jsonPretty(
-      this.transformer.encode(editorView.state.doc)
-    );
-
-    this.setState({
-      jsonDocument
-    });
-  };
 
   render() {
     const { renderEditor } = this.props;
@@ -77,7 +68,18 @@ class ToolsDrawer extends React.Component<Props, State> {
             )}
           />
           {renderEditor({
-            onChange: this.onChange
+            onChange: editorView => {
+              const jsonDocument = jsonPretty(
+                this.transformer.encode(editorView.state.doc)
+              );
+
+              this.setState({
+                jsonDocument
+              });
+            },
+            fileUploadMenuItem: createEditorMenuItem({
+              content: "File Upload"
+            })
           })}
           {isShowEditorValue && (
             <PreWrapDiv>{this.state.jsonDocument}</PreWrapDiv>
