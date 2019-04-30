@@ -16,8 +16,9 @@ import { createEditorMenuItem } from "../../utils/editor";
 
 interface RenderEditor {
   onChange: (editorView: EditorView<any>) => void;
-  fileUploadMenuItem: InsertMenuCustomItem;
   legacyImageUploadProvider: Promise<ImageUploadHandler>;
+  fileUploadMenuItem: InsertMenuCustomItem;
+  testButtom: InsertMenuCustomItem;
 }
 
 interface Props extends EditorProps {
@@ -29,7 +30,12 @@ interface State {
   isShowEditorValue: boolean;
   jsonDocument: string;
   filesName: string[];
+
+  isShowTempDataList: boolean;
+  selectedTempDataList: string[];
 }
+
+const TEMP_DATA = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"];
 
 class ToolsDrawer extends React.Component<Props, State> {
   fileInputRef: React.RefObject<FileInput> = React.createRef();
@@ -43,7 +49,9 @@ class ToolsDrawer extends React.Component<Props, State> {
     this.state = {
       isShowEditorValue: false,
       jsonDocument: "{}",
-      filesName: []
+      filesName: [],
+      isShowTempDataList: false,
+      selectedTempDataList: []
     };
   }
 
@@ -76,7 +84,13 @@ class ToolsDrawer extends React.Component<Props, State> {
 
   render() {
     const { renderEditor, isImageUpload } = this.props;
-    const { isShowEditorValue, filesName } = this.state;
+    const {
+      isShowEditorValue,
+      filesName,
+
+      isShowTempDataList,
+      selectedTempDataList
+    } = this.state;
 
     return (
       <EditorContext>
@@ -138,8 +152,37 @@ class ToolsDrawer extends React.Component<Props, State> {
             fileUploadMenuItem: createEditorMenuItem({
               content: "File Upload",
               onClick: () => this.fileInputRef.current.fileRef.current.click()
+            }),
+            testButtom: createEditorMenuItem({
+              content: "Test Button",
+              onClick: () => {
+                this.setState({ isShowTempDataList: true });
+              }
             })
           })}
+          {isShowTempDataList && (
+            <ul>
+              {TEMP_DATA.map(data => (
+                <li
+                  onClick={() => {
+                    this.setState({
+                      isShowTempDataList: false,
+                      selectedTempDataList: [...selectedTempDataList, data]
+                    });
+                  }}
+                >
+                  <a href="#">{data}</a>
+                </li>
+              ))}
+            </ul>
+          )}
+          {selectedTempDataList && (
+            <ul>
+              {selectedTempDataList.map(selectedTempData => (
+                <li>{selectedTempData}</li>
+              ))}
+            </ul>
+          )}
           {isShowEditorValue && (
             <PreWrapDiv>{this.state.jsonDocument}</PreWrapDiv>
           )}

@@ -13,13 +13,18 @@ const Editor = (props: EditorProps) => (
     isImageUpload
     renderEditor={({
       onChange,
+      legacyImageUploadProvider,
       fileUploadMenuItem,
-      legacyImageUploadProvider
+      testButtom
     }) => (
       <EditorCore
         appearance="comment"
         extensionHandlers={extensionHandlers}
-        insertMenuItems={[...selectMockMenu(["movie"]), fileUploadMenuItem]}
+        insertMenuItems={[
+          ...selectMockMenu(["movie"]),
+          fileUploadMenuItem,
+          testButtom
+        ]}
         onChange={onChange}
         legacyImageUploadProvider={legacyImageUploadProvider}
         allowExtension
