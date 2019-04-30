@@ -7,8 +7,13 @@ import { EditorView } from "prosemirror-view";
 import { Indexable } from "../../types/common";
 import { EditorProps } from "./Editor";
 
+interface RenderEditor {
+  onChange: (editorView: EditorView<any>) => void;
+  fileUploadMenuItem: InsertMenuCustomItem;
+}
+
 interface Props extends EditorProps {
-  renderEditor: (params: Indexable) => React.ReactNode;
+  renderEditor: (params: RenderEditor) => React.ReactNode;
 }
 
 interface State {
