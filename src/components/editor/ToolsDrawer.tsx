@@ -2,7 +2,7 @@ import * as React from "react";
 import { EditorContext, WithEditorActions } from "@atlaskit/editor-core";
 import { JSONTransformer } from "@atlaskit/editor-json-transformer";
 import { InsertMenuCustomItem } from "@atlaskit/editor-core/types";
-import PreWrapDiv from "../styledComponents/PreWrapDiv";
+import PreWrapDiv from "../common/PreWrapDiv";
 import { jsonPretty } from "../../utils/string";
 import { EditorView } from "prosemirror-view";
 import { EditorProps } from "./Editor";
