@@ -8,7 +8,6 @@ import PreWrapDiv from "../common/PreWrapDiv";
 import { jsonPretty } from "../../utils/string";
 import { EditorProps } from "./Editor";
 import { createEditorMenuItem } from "../../utils/editor";
-import { IFileResult } from "../../types/file";
 
 interface RenderEditor {
   onChange: (editorView: EditorView<any>) => void;
