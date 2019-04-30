@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Editor as EditorCore } from "@atlaskit/editor-core";
 import ToolsDrawer from "./ToolsDrawer";
-import mockInsertMenu from "./helphers/mockInsertMenu";
+import selectMockMenu from "./helphers/selectMockMenu";
 import extensionHandlers from "./helphers/extensionHandlers";
 
 export interface EditorProps {
@@ -14,7 +14,7 @@ const Editor = (props: EditorProps) => (
       <EditorCore
         appearance="comment"
         extensionHandlers={extensionHandlers}
-        insertMenuItems={mockInsertMenu}
+        insertMenuItems={selectMockMenu(["movie"])}
         onChange={onChange}
         allowExtension
       />

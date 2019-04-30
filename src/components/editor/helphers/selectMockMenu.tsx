@@ -7,8 +7,16 @@ interface Params {
   url: any;
 }
 
-const mockInsertMenu: InsertMenuCustomItem[] = [
-  createEditorMenuItem({
+type MockMenuItem = "movie";
+
+type SelectMockMenu = MockMenuItem[];
+
+interface MockInsertMenu {
+  [key: string]: InsertMenuCustomItem;
+}
+
+const mockInsertMenu: MockInsertMenu = {
+  movie: createEditorMenuItem({
     content: "Movie extension",
     onClick: editorActions => {
       const url = prompt("Input Url") || "";
@@ -37,6 +45,9 @@ const mockInsertMenu: InsertMenuCustomItem[] = [
       });
     }
   })
-];
+};
 
-export default mockInsertMenu;
+const selectMockMenu = (menu: SelectMockMenu): InsertMenuCustomItem[] =>
+  menu.map(menuItem => mockInsertMenu[menuItem]);
+
+export default selectMockMenu;
