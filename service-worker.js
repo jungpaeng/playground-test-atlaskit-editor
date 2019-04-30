@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-sw.js");
 
 importScripts(
-  "/test-atlaskit-editor/precache-manifest.659a54a92b86ca402deea037dbb1b5ee.js"
+  "/test-atlaskit-editor/precache-manifest.3a434f375248245c0901c002a8def8c2.js"
 );
 
 self.addEventListener('message', (event) => {
