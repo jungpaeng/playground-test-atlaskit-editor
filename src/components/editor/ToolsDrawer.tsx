@@ -2,11 +2,13 @@ import * as React from "react";
 import { EditorContext, WithEditorActions } from "@atlaskit/editor-core";
 import { JSONTransformer } from "@atlaskit/editor-json-transformer";
 import { InsertMenuCustomItem } from "@atlaskit/editor-core/types";
+import { EditorView } from "prosemirror-view";
+import FileInput from "../FileInput";
 import PreWrapDiv from "../common/PreWrapDiv";
 import { jsonPretty } from "../../utils/string";
-import { EditorView } from "prosemirror-view";
 import { EditorProps } from "./Editor";
 import { createEditorMenuItem } from "../../utils/editor";
+import { IFileResult } from "../../types/file";
 
 interface RenderEditor {
   onChange: (editorView: EditorView<any>) => void;
@@ -20,9 +22,11 @@ interface Props extends EditorProps {
 interface State {
   isShowEditorValue: boolean;
   jsonDocument: string;
+  filesName: string[];
 }
 
 class ToolsDrawer extends React.Component<Props, State> {
+  fileInputRef: React.RefObject<FileInput> = React.createRef();
   transformer: JSONTransformer;
 
   constructor(props: Props) {
@@ -31,13 +35,22 @@ class ToolsDrawer extends React.Component<Props, State> {
     this.transformer = new JSONTransformer();
     this.state = {
       isShowEditorValue: false,
-      jsonDocument: "{}"
+      jsonDocument: "{}",
+      filesName: []
     };
   }
 
+  recursiveFileUploadQueue = (fileList: File[]) => {
+    const { filesName } = this.state;
+
+    this.setState({
+      filesName: [...filesName, ...fileList.map(file => file.name)]
+    });
+  };
+
   render() {
     const { renderEditor } = this.props;
-    const { isShowEditorValue } = this.state;
+    const { isShowEditorValue, filesName } = this.state;
 
     return (
       <EditorContext>
@@ -51,6 +64,12 @@ class ToolsDrawer extends React.Component<Props, State> {
           >
             Show/Hide JSON Data
           </button>
+          <FileInput
+            ref={this.fileInputRef}
+            onChange={this.recursiveFileUploadQueue}
+            multiple
+            isHide
+          />
           <WithEditorActions
             render={actions => (
               <>
@@ -73,16 +92,22 @@ class ToolsDrawer extends React.Component<Props, State> {
                 this.transformer.encode(editorView.state.doc)
               );
 
-              this.setState({
-                jsonDocument
-              });
+              this.setState({ jsonDocument });
             },
             fileUploadMenuItem: createEditorMenuItem({
-              content: "File Upload"
+              content: "File Upload",
+              onClick: () => this.fileInputRef.current.fileRef.current.click()
             })
           })}
           {isShowEditorValue && (
             <PreWrapDiv>{this.state.jsonDocument}</PreWrapDiv>
+          )}
+          {!!filesName.length && (
+            <ul>
+              {filesName.map(fileName => (
+                <li>{fileName}</li>
+              ))}
+            </ul>
           )}
         </>
       </EditorContext>
