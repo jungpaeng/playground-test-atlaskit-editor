@@ -1,7 +1,12 @@
 import * as React from "react";
-import { EditorContext, WithEditorActions } from "@atlaskit/editor-core";
+import {
+  EditorContext,
+  WithEditorActions,
+  EditorActions
+} from "@atlaskit/editor-core";
 import { JSONTransformer } from "@atlaskit/editor-json-transformer";
 import { InsertMenuCustomItem } from "@atlaskit/editor-core/types";
+import { ImageUploadHandler } from "@atlaskit/editor-core/plugins/image-upload/types";
 import { EditorView } from "prosemirror-view";
 import FileInput from "../FileInput";
 import PreWrapDiv from "../common/PreWrapDiv";
@@ -12,10 +17,12 @@ import { createEditorMenuItem } from "../../utils/editor";
 interface RenderEditor {
   onChange: (editorView: EditorView<any>) => void;
   fileUploadMenuItem: InsertMenuCustomItem;
+  legacyImageUploadProvider: Promise<ImageUploadHandler>;
 }
 
 interface Props extends EditorProps {
   renderEditor: (params: RenderEditor) => React.ReactNode;
+  isImageUpload?: boolean;
 }
 
 interface State {
@@ -26,6 +33,7 @@ interface State {
 
 class ToolsDrawer extends React.Component<Props, State> {
   fileInputRef: React.RefObject<FileInput> = React.createRef();
+  imageUploadRef: React.RefObject<FileInput> = React.createRef();
   transformer: JSONTransformer;
 
   constructor(props: Props) {
@@ -47,8 +55,27 @@ class ToolsDrawer extends React.Component<Props, State> {
     });
   };
 
+  recursiveImageUploadQueue = (fileList: File[], actions: EditorActions) =>
+    fileList.forEach(async file => {
+      const url = await window.URL.createObjectURL(file);
+
+      actions.replaceSelection({
+        type: "mediaSingle",
+        attrs: { layout: "center" },
+        content: [
+          {
+            type: "media",
+            attrs: {
+              type: "external",
+              url
+            }
+          }
+        ]
+      });
+    });
+
   render() {
-    const { renderEditor } = this.props;
+    const { renderEditor, isImageUpload } = this.props;
     const { isShowEditorValue, filesName } = this.state;
 
     return (
@@ -82,6 +109,16 @@ class ToolsDrawer extends React.Component<Props, State> {
                 >
                   Save
                 </button>
+                {isImageUpload && (
+                  <FileInput
+                    ref={this.imageUploadRef}
+                    onChange={file =>
+                      this.recursiveImageUploadQueue(file, actions)
+                    }
+                    multiple
+                    isHide
+                  />
+                )}
               </>
             )}
           />
@@ -93,6 +130,11 @@ class ToolsDrawer extends React.Component<Props, State> {
 
               this.setState({ jsonDocument });
             },
+            legacyImageUploadProvider:
+              isImageUpload &&
+              Promise.resolve(() =>
+                this.imageUploadRef.current.fileRef.current.click()
+              ),
             fileUploadMenuItem: createEditorMenuItem({
               content: "File Upload",
               onClick: () => this.fileInputRef.current.fileRef.current.click()

@@ -10,12 +10,18 @@ export interface EditorProps {
 
 const Editor = (props: EditorProps) => (
   <ToolsDrawer
-    renderEditor={({ onChange, fileUploadMenuItem }) => (
+    isImageUpload
+    renderEditor={({
+      onChange,
+      fileUploadMenuItem,
+      legacyImageUploadProvider
+    }) => (
       <EditorCore
         appearance="comment"
         extensionHandlers={extensionHandlers}
         insertMenuItems={[...selectMockMenu(["movie"]), fileUploadMenuItem]}
         onChange={onChange}
+        legacyImageUploadProvider={legacyImageUploadProvider}
         allowExtension
       />
     )}
