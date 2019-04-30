@@ -7,6 +7,7 @@
     "@atlaskit/editor-json-transformer": "^5.0.2",
     "@atlaskit/media-core": "^29.1.5",
     "@atlaskit/renderer": "^45.6.2",
+    "classnames": "^2.2.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-intl": "^2.8.0",
@@ -38,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.7",
     "@types/jest": "^24.0.11",
     "@types/node": "^11.13.7",
     "@types/react": "^16.8.14",
