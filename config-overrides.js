@@ -1,7 +1,3 @@
-const { injectBabelPlugin } = require("react-app-rewired");
+const { addBabelPlugin, override } = require("customize-cra");
 
-module.exports = function override(config, env) {
-  config = injectBabelPlugin(["styled-jsx/babel"], config);
-
-  return config;
-};
+module.exports = override(addBabelPlugin("styled-jsx/babel"));
