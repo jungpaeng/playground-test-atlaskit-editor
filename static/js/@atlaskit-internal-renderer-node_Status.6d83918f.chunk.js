@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[22],{1261:function(t,e,n){"use strict";n.r(e);var o=n(1),r=n(0),c=n(262),u=n(91),a=function(t){function e(){return null!==t&&t.apply(this,arguments)||this}return o.__extends(e,t),e.prototype.render=function(){var t=this.props,e=t.text,n=t.color,o=t.localId;return r.createElement(u.b,{data:{userContext:"document"}},r.createElement(c.a,{text:e,color:n,localId:o}))},e}(r.PureComponent);e.default=a}}]);
-//# sourceMappingURL=@atlaskit-internal-renderer-node_Status.6d83918f.chunk.js.map

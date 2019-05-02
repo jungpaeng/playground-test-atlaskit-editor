@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[28],{1244:function(n,o){},1246:function(n,o){},1247:function(n,o){},1248:function(n,o){},1249:function(n,o){},915:function(n,o){function i(n){var o=new Error("Cannot find module '"+n+"'");throw o.code="MODULE_NOT_FOUND",o}i.keys=function(){return[]},i.resolve=i,n.exports=i,i.id=915}}]);
-//# sourceMappingURL=@atlaskit-internal_media-viewer-pdf-viewer.806ca166.chunk.js.map

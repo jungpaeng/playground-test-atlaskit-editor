@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[15],{1436:function(n,a,e){"use strict";e.r(a),e.d(a,"default",function(){return u});var r=e(0),t=e(200),c=e(283);function u(n){var a=n.url,e=n.data,u=n.eventHandlers,o=Object(c.a)(u,"smartCard"),d=a&&o?function(){return o(a)}:void 0;return r.createElement(t.a,{appearance:"block",url:a,data:e,onClick:d})}}}]);
+//# sourceMappingURL=@atlaskit-internal-renderer-node_BlockCard.a4e9a4f6.chunk.js.map

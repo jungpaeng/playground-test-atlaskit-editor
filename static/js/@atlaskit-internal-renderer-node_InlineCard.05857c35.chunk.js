@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[19],{1435:function(n,a,e){"use strict";e.r(a),e.d(a,"default",function(){return c});var r=e(0),t=e(200),u=e(283);function c(n){var a=n.url,e=n.data,c=n.eventHandlers,i=Object(u.a)(c,"smartCard"),o=a&&i?function(){return i(a)}:void 0;return r.createElement(t.a,{appearance:"inline",url:a,data:e,onClick:o})}}}]);
+//# sourceMappingURL=@atlaskit-internal-renderer-node_InlineCard.05857c35.chunk.js.map
