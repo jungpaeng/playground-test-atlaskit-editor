@@ -5,7 +5,10 @@ import {
   EditorActions
 } from "@atlaskit/editor-core";
 import { JSONTransformer } from "@atlaskit/editor-json-transformer";
-import { InsertMenuCustomItem } from "@atlaskit/editor-core/types";
+import {
+  InsertMenuCustomItem,
+  ReactComponents
+} from "@atlaskit/editor-core/types";
 import { ImageUploadHandler } from "@atlaskit/editor-core/plugins/image-upload/types";
 import { EditorView } from "prosemirror-view";
 import FileInput from "../FileInput";
@@ -18,11 +21,18 @@ interface RenderEditor {
   onChange: (editorView: EditorView<any>) => void;
   legacyImageUploadProvider: Promise<ImageUploadHandler>;
   fileUploadMenuItem: InsertMenuCustomItem;
-  testButtom: InsertMenuCustomItem;
+  customButton: InsertMenuCustomItem[];
+}
+
+interface customButton {
+  name: string;
+  element?: ReactComponents;
+  onClick?: (editorActions: EditorActions) => void;
 }
 
 interface Props extends EditorProps {
   renderEditor: (params: RenderEditor) => React.ReactNode;
+  customButton?: customButton[];
   isImageUpload?: boolean;
 }
 
@@ -31,11 +41,8 @@ interface State {
   jsonDocument: string;
   filesName: string[];
 
-  isShowTempDataList: boolean;
   selectedTempDataList: string[];
 }
-
-const TEMP_DATA = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"];
 
 class ToolsDrawer extends React.Component<Props, State> {
   fileInputRef: React.RefObject<FileInput> = React.createRef();
@@ -50,7 +57,6 @@ class ToolsDrawer extends React.Component<Props, State> {
       isShowEditorValue: false,
       jsonDocument: "{}",
       filesName: [],
-      isShowTempDataList: false,
       selectedTempDataList: []
     };
   }
@@ -88,7 +94,6 @@ class ToolsDrawer extends React.Component<Props, State> {
       isShowEditorValue,
       filesName,
 
-      isShowTempDataList,
       selectedTempDataList
     } = this.state;
 
@@ -153,29 +158,13 @@ class ToolsDrawer extends React.Component<Props, State> {
               content: "File Upload",
               onClick: () => this.fileInputRef.current.fileRef.current.click()
             }),
-            testButtom: createEditorMenuItem({
-              content: "Test Button",
-              onClick: () => {
-                this.setState({ isShowTempDataList: true });
-              }
-            })
+            customButton: this.props.customButton.map(data =>
+              createEditorMenuItem({
+                content: data.name,
+                onClick: data.onClick
+              })
+            )
           })}
-          {isShowTempDataList && (
-            <ul>
-              {TEMP_DATA.map(data => (
-                <li
-                  onClick={() => {
-                    this.setState({
-                      isShowTempDataList: false,
-                      selectedTempDataList: [...selectedTempDataList, data]
-                    });
-                  }}
-                >
-                  <a href="#">{data}</a>
-                </li>
-              ))}
-            </ul>
-          )}
           {selectedTempDataList && (
             <ul>
               {selectedTempDataList.map(selectedTempData => (
