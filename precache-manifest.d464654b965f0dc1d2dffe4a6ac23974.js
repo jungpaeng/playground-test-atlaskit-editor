@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4194df594226178df921ded6fccaa79b",
+    "revision": "3a244e89fef9042ea26b0250a41692d7",
     "url": "/test-atlaskit-editor/index.html"
   },
   {
@@ -320,8 +320,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/test-atlaskit-editor/static/js/@atlaskit-internal_resourcedEmojiComponent.99848786.chunk.js"
   },
   {
-    "revision": "3045ecbec0f51a0ee74c",
-    "url": "/test-atlaskit-editor/static/js/main.8d7f8185.chunk.js"
+    "revision": "5b5e4ebbecff6845b231",
+    "url": "/test-atlaskit-editor/static/js/main.63546f11.chunk.js"
   },
   {
     "revision": "6a7f05e42f4124dd0ec0",
