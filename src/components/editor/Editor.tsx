@@ -40,6 +40,8 @@ const EditorPage = (props: EditorProps) => (
         onChange={onChange}
         legacyImageUploadProvider={legacyImageUploadProvider}
         allowExtension
+        allowTextColor
+        allowTextAlignment
       />
     )}
     {...props}
