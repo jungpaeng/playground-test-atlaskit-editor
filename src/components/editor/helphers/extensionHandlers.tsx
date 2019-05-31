@@ -12,14 +12,14 @@ const extensionHandlers: ExtensionHandlers = {
 
     switch (extensionKey) {
       case "movie":
-        const { type, url } = parameters;
+        const { type, key } = parameters;
         const movie: Movie = {} as Movie;
 
         if (type === "youtube") {
-          movie.id = url[2];
+          movie.id = key;
           movie.src = "//www.youtube.com/embed/";
         } else if (type === "vimeo") {
-          movie.id = url[1];
+          movie.id = key;
           movie.src = "//player.vimeo.com/video/";
         } else {
           return null;

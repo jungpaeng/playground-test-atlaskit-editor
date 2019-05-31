@@ -4,7 +4,7 @@ import { createEditorMenuItem } from "../../../utils/editor";
 
 interface Params {
   type: string;
-  url: any;
+  key: any;
 }
 
 type MockMenuItem = "movie";
@@ -26,10 +26,10 @@ const mockInsertMenu: MockInsertMenu = {
 
       if (youtubeMatch && youtubeMatch[2].length === 11) {
         newParameters.type = "youtube";
-        newParameters.url = youtubeMatch;
+        newParameters.key = youtubeMatch[2];
       } else if (vimeoMatch && url[1]) {
         newParameters.type = "vimeo";
-        newParameters.url = vimeoMatch;
+        newParameters.key = vimeoMatch[1];
       } else {
         return null;
       }
