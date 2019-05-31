@@ -60,8 +60,8 @@
     "@atlaskit-internal_media-viewer-pdf-viewer.js.map": "/test-atlaskit-editor/static/js/@atlaskit-internal_media-viewer-pdf-viewer.6b5f56b3.chunk.js.map",
     "@atlaskit-internal_resourcedEmojiComponent.js": "/test-atlaskit-editor/static/js/@atlaskit-internal_resourcedEmojiComponent.99848786.chunk.js",
     "@atlaskit-internal_resourcedEmojiComponent.js.map": "/test-atlaskit-editor/static/js/@atlaskit-internal_resourcedEmojiComponent.99848786.chunk.js.map",
-    "main.js": "/test-atlaskit-editor/static/js/main.63546f11.chunk.js",
-    "main.js.map": "/test-atlaskit-editor/static/js/main.63546f11.chunk.js.map",
+    "main.js": "/test-atlaskit-editor/static/js/main.28a1d342.chunk.js",
+    "main.js.map": "/test-atlaskit-editor/static/js/main.28a1d342.chunk.js.map",
     "react-syntax-highlighter_languages_refractor_abap.js": "/test-atlaskit-editor/static/js/react-syntax-highlighter_languages_refractor_abap.ec971a5e.chunk.js",
     "react-syntax-highlighter_languages_refractor_abap.js.map": "/test-atlaskit-editor/static/js/react-syntax-highlighter_languages_refractor_abap.ec971a5e.chunk.js.map",
     "react-syntax-highlighter_languages_refractor_actionscript.js": "/test-atlaskit-editor/static/js/react-syntax-highlighter_languages_refractor_actionscript.2f276852.chunk.js",
@@ -366,8 +366,8 @@
     "react-syntax-highlighter_languages_refractor_yaml.js.map": "/test-atlaskit-editor/static/js/react-syntax-highlighter_languages_refractor_yaml.46224186.chunk.js.map",
     "runtime~main.js": "/test-atlaskit-editor/static/js/runtime~main.8f55edc9.js",
     "runtime~main.js.map": "/test-atlaskit-editor/static/js/runtime~main.8f55edc9.js.map",
-    "static/js/183.72b0bebf.chunk.js": "/test-atlaskit-editor/static/js/183.72b0bebf.chunk.js",
-    "static/js/183.72b0bebf.chunk.js.map": "/test-atlaskit-editor/static/js/183.72b0bebf.chunk.js.map",
+    "static/js/183.fda2b8eb.chunk.js": "/test-atlaskit-editor/static/js/183.fda2b8eb.chunk.js",
+    "static/js/183.fda2b8eb.chunk.js.map": "/test-atlaskit-editor/static/js/183.fda2b8eb.chunk.js.map",
     "static/js/184.ce38dbe1.chunk.js": "/test-atlaskit-editor/static/js/184.ce38dbe1.chunk.js",
     "static/js/184.ce38dbe1.chunk.js.map": "/test-atlaskit-editor/static/js/184.ce38dbe1.chunk.js.map",
     "static/js/185.885589d6.chunk.js": "/test-atlaskit-editor/static/js/185.885589d6.chunk.js",
@@ -465,7 +465,7 @@
     "static/js/231.ec7280d4.chunk.js": "/test-atlaskit-editor/static/js/231.ec7280d4.chunk.js",
     "static/js/231.ec7280d4.chunk.js.map": "/test-atlaskit-editor/static/js/231.ec7280d4.chunk.js.map",
     "index.html": "/test-atlaskit-editor/index.html",
-    "precache-manifest.d464654b965f0dc1d2dffe4a6ac23974.js": "/test-atlaskit-editor/precache-manifest.d464654b965f0dc1d2dffe4a6ac23974.js",
+    "precache-manifest.ef95506928b9db4f0139c34870c71a3d.js": "/test-atlaskit-editor/precache-manifest.ef95506928b9db4f0139c34870c71a3d.js",
     "service-worker.js": "/test-atlaskit-editor/service-worker.js"
   }
 }
